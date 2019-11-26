@@ -51,6 +51,14 @@ class ToolController {
       tags
     });
   }
+
+  async delete(req, res) {
+    const { id } = req.params;
+
+    await Tool.findByIdAndDelete(id);
+
+    return res.json();
+  }
 }
 
 export default new ToolController();
