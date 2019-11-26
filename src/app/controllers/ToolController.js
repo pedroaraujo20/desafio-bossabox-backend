@@ -52,7 +52,7 @@ class ToolController {
 
     await Tool.findByIdAndDelete(id);
 
-    return res.json();
+    return res.status(204).json();
   }
 }
 
