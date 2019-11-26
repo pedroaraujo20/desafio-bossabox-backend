@@ -37,12 +37,7 @@ class ToolController {
       return res.status(401).json({ error: 'Tool already exists' });
     }
 
-    await Tool.create({
-      title,
-      link,
-      description,
-      tags
-    });
+    await Tool.create(req.body);
 
     return res.json({
       title,
